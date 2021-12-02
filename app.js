@@ -34,8 +34,7 @@ app.use("/food-search", searchByLocation)
 
 
 
-const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`backend server running on ${PORT}`)
+app.listen( process.env.PORT || 5000, ()=> {
+    console.log(`backend server running on ${process.env.PORT}`)
 })

@@ -1,3 +1,7 @@
+
+GET https://obscure-chamber-09057.herokuapp.com/register
+
+###
 # Register as a Vendor
 POST http://localhost:5000/register/vendor
 Content-Type: application/json
@@ -32,6 +36,7 @@ Content-Type: application/json
     "email": "afeezdev@gmail.com",
     "password": "12345"
 }
+
 
 ###
 
