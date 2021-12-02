@@ -1,0 +1,68 @@
+# Register as a Vendor
+POST http://localhost:5000/register/vendor
+Content-Type: application/json
+
+{ 
+    "email": "zde23e90@gmail.com",
+    "password": "12345",
+    "name": "Afeez Olawale",
+    "location": "Abuja, Nigeria"
+}
+
+###
+
+# Register as a buyer
+POST http://localhost:5000/register/buyer
+Content-Type: application/json
+
+{
+    
+    "email": "afeezdev@gmail.com",
+    "password": "12345",
+    "name": "Afeez Olawale",
+    "location": "Abuja, Nigeria"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "afeezdev@gmail.com",
+    "password": "12345"
+}
+
+###
+
+POST http://localhost:5000/food-menu
+Content-Type: application/json
+
+{
+    "email": "afeezdev@gmail.com",
+    "food": "Meatee",
+    "price": "#300"
+}
+
+###
+
+POST http://localhost:5000/order
+Content-Type: application/json
+
+{
+    "email": "afeezdev4@gmail.com",
+    "food": "Meat"
+}
+
+###
+
+
+GET  http://localhost:5000/food-search
+Content-Type: application/json
+
+{
+    "email": "afeezdev4@gmail.com",
+    "food": "Meat"
+}
+
+###
