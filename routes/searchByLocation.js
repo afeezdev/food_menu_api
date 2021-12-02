@@ -10,25 +10,16 @@ router.get("/", (req, res) => {
 // getByLocation
 
 router.post("/", async (req, res) => {
-  let orderID
-  const { food, email } = req.body;
-  const foodDetails = await db('food_menu').where({'food': food})
-  .then(foodInfo => {
-    return foodInfo[0]
+  const { location } = req.body;
+  const foodMenuList = await db.select().table('food_menu')  
+  .then(foodList => {
+    return foodList
     }) 
-      db('food_order')
-      .insert({
-        food: food,
-        price: foodDetails.price,
-        buyer_email: email,
-      }).then(response => {
-        orderID = response[0]
-          db('food_order').where('ID', orderID)
-          .then( orderInfo => {
-            res.send(orderInfo)
-          })
-      })
+    const filteredFood = foodMenuList.filter(food => {
+      return food.vendor_location.toLowerCase().includes(location);
+    })
     
+    console.log(filteredFood)
   })
 
 module.exports = router

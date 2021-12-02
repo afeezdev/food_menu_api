@@ -10,21 +10,21 @@ Content-Type: application/json
     "email": "zde23e90@gmail.com",
     "password": "12345",
     "name": "Afeez Olawale",
-    "location": "Abuja, Nigeria"
+    "location": "Ilorin, Nigeria"
 }
 
 ###
 
 # Register as a buyer
 POST http://localhost:5000/register/buyer
+
 Content-Type: application/json
 
 {
     
     "email": "afeezdev@gmail.com",
     "password": "12345",
-    "name": "Afeez Olawale",
-    "location": "Abuja, Nigeria"
+    "name": "Afeez Olawale"
 }
 
 ###
@@ -44,8 +44,8 @@ POST http://localhost:5000/food-menu
 Content-Type: application/json
 
 {
-    "email": "afeezdev@gmail.com",
-    "food": "Meatee",
+    "email": "zde23e90@gmail.com",
+    "food": "Meateeee",
     "price": "#300"
 }
 
@@ -62,12 +62,11 @@ Content-Type: application/json
 ###
 
 
-GET  http://localhost:5000/food-search
+POST  http://localhost:5000/food-search
 Content-Type: application/json
 
 {
-    "email": "afeezdev4@gmail.com",
-    "food": "Meat"
+    "location": "ilorin"
 }
 
 ###
