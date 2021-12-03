@@ -15,19 +15,23 @@ router.post("/", async (req, res) => {
     return user[0]
     }) 
     if(vendor.type === 'vendor') {
-      db('food_menu')
-      .insert({
-        food: food,
-        price: price,
-        vendor_email: email,
-        vendor_location: vendor.location,
-      }).then(response => {
-        foodID = response[0]
-          db('food_menu').where('ID', foodID)
-          .then( foodInfo => {
-            res.send(foodInfo)
-          })
-      })
+      try {
+        db('food_menu')
+        .insert({
+          food: food,
+          price: price,
+          vendor_email: email,
+          vendor_location: vendor.location,
+        }).then(response => {
+          foodID = response[0]
+            db('food_menu').where('ID', foodID)
+            .then( foodInfo => {
+              res.send(foodInfo)
+            })
+        })
+      } catch (error) {
+        res.status(400).json(`food's name already exist`)
+      }
     } else {
       res.status(400).json('Only Vendor user can create food menu')
     }

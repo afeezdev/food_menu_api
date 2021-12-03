@@ -66,7 +66,8 @@ POST  http://localhost:5000/food-search
 Content-Type: application/json
 
 {
-    "location": "ilorin"
+    "location": "Abuja"
 }
 
 ###
+

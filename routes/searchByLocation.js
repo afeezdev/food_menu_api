@@ -15,8 +15,9 @@ router.post("/", async (req, res) => {
   .then(foodList => {
     return foodList
     }) 
+    // console.log(foodMenuList)
     const filteredFood = foodMenuList.filter(food => {
-      return food.vendor_location.toLowerCase().includes(location);
+      return food.vendor_location.toLowerCase().includes(location.toLowerCase());
     })
     
     console.log(filteredFood)
