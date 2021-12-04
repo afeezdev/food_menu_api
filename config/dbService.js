@@ -1,16 +1,16 @@
-const mysql = require('mysql');
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config({ path: 'config/config.env'});
 const knex = require('knex');
 
+console.log(process.env.HOST)
 
 const db = knex({
     client: "mysql",
     connection: {
-        host: 'bvgk1v2sg2fwfdcsefmi-mysql.services.clever-cloud.com',
+        host: process.env.HOST,
         user: 'uwqkffxlhbawexpg',
-        password: 'IOtKcxyfFaljCErWlMEX',
-        database: 'bvgk1v2sg2fwfdcsefmi',
+        password: process.env.PASSWORD,
+        database: process.env.DATABASE,
     },
 });
 

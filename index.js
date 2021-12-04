@@ -1,8 +1,7 @@
 const express = require("express");
-const bodyParser = require('body-parser')
 const app = express();
 const cors = require('cors');
-const mysql = require('mysql');
+const dotenv = require('dotenv');
 
 const index = require("./routes/index");
 const signUp = require("./routes/signUp");
@@ -11,11 +10,12 @@ const foodMenu = require("./routes/food-menu");
 const order = require("./routes/order");
 const searchByLocation = require("./routes/searchByLocation")
 
+const path = require('path')
 
 
 
 // 
-require('dotenv').config();
+require('dotenv').config({ path: 'config/config.env'});
 
 
 //middleware
